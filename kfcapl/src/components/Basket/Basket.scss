@@ -1,0 +1,28 @@
+.basket {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px;
+    background: white;
+    border: 1px solid #d2db9b;
+    border-radius: 8px;
+    width: 360px;
+    max-width: 75vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & > header{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    & > div{
+        background: fixed;
+    }
+    
+    & > footer {
+        background: fixed;
+    }
+}
+
