@@ -23,6 +23,11 @@ const Basket = (props) => {
     onProductRemove(orderedProduct);
   };
 
+  const handleAddToBasket = (product) => {
+    const newProduct = { ...product, quantity: 1 }; // Ustaw domyślną ilość na 1
+    onAddToBasket(newProduct);
+  };
+
   return (
     <div className="basket">
       <header>
@@ -33,12 +38,13 @@ const Basket = (props) => {
         <button>X</button>
       </header>
       <div>
-        <ul>
+      <ul>
           {groupedOrderProducts.map(([name, orderedProducts]) => (
             <BasketItem
               orderCount={orderedProducts.length}
               orderedProduct={orderedProducts[0]}
               onProductRemove={handleProductRemove}
+              onAddToBasket={handleAddToBasket}
             />
           ))}
         </ul>

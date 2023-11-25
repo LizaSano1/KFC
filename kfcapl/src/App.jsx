@@ -7,8 +7,9 @@ import ProductModal from "./components/ProductModal/ProductModal";
 
 function App() {
   const [orderedProducts, setOrderedProducts] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleProductSelect = (product) => {
     setSelectedProduct(product);
     setIsModalOpen(true);
@@ -20,9 +21,16 @@ function App() {
     );
   };
 
-  const handleCloseModal = () => {
+  const handleAddToBasket = (product, quantity) => {
+    const newProduct = { ...product, quantity };
+    setOrderedProducts([...orderedProducts, newProduct]);
+  };
+
+  const handleModalClose = () => {
+    setSelectedProduct(null);
     setIsModalOpen(false);
   };
+
 
   return (
     <>
@@ -47,7 +55,11 @@ function App() {
         </section>
       </main>
       {isModalOpen && (
-        <ProductModal onClose={handleCloseModal} product={selectedProduct} />
+        <ProductModal
+          onClose={handleModalClose}
+          product={selectedProduct}
+          onAddToBasket={handleAddToBasket}
+        />
       )}
     </>
   );
