@@ -6,7 +6,6 @@ const ProductModal = (props) => {
   const [quantity, setQuantity] = useState(1);
 
   const handleAddToBasket = () => {
-    // Przekazujemy informacje o produkcie i ilości do funkcji z App.js
     onAddToBasket(product, quantity);
     onClose();
   };
