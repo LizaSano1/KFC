@@ -24,7 +24,7 @@ const Basket = (props) => {
   };
 
   const handleAddToBasket = (product) => {
-    const newProduct = { ...product, quantity: 1 }; // Ustaw domyślną ilość na 1
+    const newProduct = { ...product, quantity: 1 }; 
     onAddToBasket(newProduct);
   };
 

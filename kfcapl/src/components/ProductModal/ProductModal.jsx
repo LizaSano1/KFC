@@ -3,7 +3,7 @@ import "./ProductModal.scss";
 
 const ProductModal = (props) => {
   const { onClose, product, onAddToBasket } = props;
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(product.quantity || 1);
 
   const handleAddToBasket = () => {
     onAddToBasket(product, quantity);
@@ -11,12 +11,12 @@ const ProductModal = (props) => {
   };
 
   const handleIncrementQuantity = () => {
-    setQuantity(quantity + 1);
+    setQuantity((prevQuantity) => prevQuantity + 1);
   };
 
   const handleDecrementQuantity = () => {
     if (quantity > 1) {
-      setQuantity(quantity - 1);
+      setQuantity((prevQuantity) => prevQuantity - 1);
     }
   };
 

@@ -14,7 +14,7 @@ const BasketItem = (props) => {
         <span>{orderCount}x</span>
         <span>{name}</span>
         <span>{price}</span>
-        <span>{quantity}</span>
+        
       </div>
       <div className="actions">
         <button type="button" onClick={handleButtonClick}>

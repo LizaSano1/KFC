@@ -11,7 +11,7 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleProductSelect = (product) => {
-    setSelectedProduct(product);
+    setSelectedProduct({ ...product, quantity: 1 });
     setIsModalOpen(true);
   };
 
@@ -30,8 +30,6 @@ function App() {
     setSelectedProduct(null);
     setIsModalOpen(false);
   };
-
-
   return (
     <>
       <Basket
