@@ -30,8 +30,10 @@ function App() {
     setSelectedProduct(null);
     setIsModalOpen(false);
   };
+
   return (
     <>
+      {isModalOpen && <div className="overlay" />}
       <Basket
         orderedProducts={orderedProducts}
         onProductRemove={handleProductRemove}
